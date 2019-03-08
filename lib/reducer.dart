@@ -10,6 +10,6 @@ Reducer<CountState> buildReducer() {
 
 CountState _add(CountState state, Action action) {
   var clone = state.clone();
-  clone.count = clone.count + 1;
+  clone.counts.add("fish-rdux");
   return clone;
 }
