@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:fish_redux_demo/component/component.dart';
+import 'package:fish_redux_demo/component/reduer.dart';
 import 'package:fish_redux_demo/state.dart';
 
 class CountAdapter extends DynamicFlowAdapter<CountState> {
@@ -8,7 +9,8 @@ class CountAdapter extends DynamicFlowAdapter<CountState> {
       pool: <String, Component<Object>>{
           'count': CountComponent(),
         },
-      connector: _ListConnector()
+      connector: _ListConnector(),
+    reducer:buildReducer()
   );
 }
 

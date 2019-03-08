@@ -4,12 +4,15 @@ import 'package:fish_redux_demo/state.dart';
 
 Reducer<CountState> buildReducer() {
   return asReducer(
-    <Object, Reducer<CountState>>{CountAction.add: _add},
+    <Object, Reducer<CountState>>{
+      CountAction.add: _add,
+    },
   );
 }
 
 CountState _add(CountState state, Action action) {
   var clone = state.clone();
-  clone.counts.add("fish-rdux");
+  clone.counts.add("fish-redux" + clone.counts.length.toString());
   return clone;
 }
+
